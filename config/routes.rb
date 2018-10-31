@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get 'sessions' => 'users/sessions#show'
- end
+  end
 
 end
