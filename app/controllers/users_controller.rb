@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def signup
-
    @users=User.all
    p @users.length
   end

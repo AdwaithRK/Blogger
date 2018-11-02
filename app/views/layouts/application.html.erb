@@ -13,4 +13,10 @@
   <%= render 'users/menu/login_items' %>
 </ul>
 <%= yield %>
+
+<% if current_user.present?%>
+   <%= button_to 'Show all feed', feed_show_url, method: :get %>
+<%end%>
+
+
 </html>

@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+   Title  :<%= post.title %> <br>
+   Content :<%= post.content %><br>
+--------------------------------------------<br>
+<% end %>
+
+
+<%= button_to 'Go to profile', '/signup', method: :get %>
+ 
