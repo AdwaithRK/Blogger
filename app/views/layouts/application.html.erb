@@ -16,6 +16,7 @@
 
 <% if current_user.present?%>
    <%= button_to 'Show all feed', feed_show_url, method: :get %>
+   <%= button_to 'My works',posts_url, method: :get%>
 <%end%>
 
 

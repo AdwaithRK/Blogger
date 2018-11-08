@@ -19,6 +19,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post=Post.find_by(id:params[:id]);
+    @post.update_attribute(:likes,@post.likes+1)
+    redirect_to feed_show_url
   end
 
   # POST /posts

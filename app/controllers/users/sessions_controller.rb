@@ -2,7 +2,7 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-
+  before_action :check_sign_in_status, only: [:create]
   # GET /resource/sign_in
   # def new
   #   super
@@ -18,7 +18,13 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # protected
+  protected
+
+  def check_sign_in_status
+     if(!user_signed_in?)
+      redirect_to new_user_session_url
+     end
+  end
 
 
   # If you have extra params to permit, append them to the sanitizer.

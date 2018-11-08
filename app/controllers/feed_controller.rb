@@ -1,12 +1,6 @@
 class FeedController < ApplicationController
   def show
-    @users=User.all
-    @posts=[]
-    @users.each do |user|
-      tpost=user.posts.all
-      @posts = @posts + tpost
-    end
-
-    
+    @posts = Post.includes(:user).all.order("created_at");  
+    # @posts.order("created_at");
   end
 end
